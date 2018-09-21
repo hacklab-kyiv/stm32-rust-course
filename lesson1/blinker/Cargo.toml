@@ -1,0 +1,13 @@
+[package]
+name = "hello_arm"
+version = "0.1.0"
+authors = ["Zakhar Kravtsov <zakhar.kravtsov@developex.org>"]
+
+[build]
+target = "thumbv6m-none-eabi"
+
+[target.thumbv6m-none-eabi]
+rustflags = [
+  "-C", "link-arg=-nostartfiles",
+  "-C", "link-arg=-Tlayout.ld",
+]
